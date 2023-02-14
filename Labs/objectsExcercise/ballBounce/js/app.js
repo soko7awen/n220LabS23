@@ -2,23 +2,34 @@
 // 01/25/23
 // N220
 
-let dvd;
-function preload() {
-  dvd = loadImage('img/dvdlogo.png');
+let bounds = {
+    x: 800,
+    y: 600
 }
-let dvdSize = { x: 187, y: 83 }
 
 //(Replace this with object)
 //Define boundsX and boundsY, posX and posY, along with speedX and speedY
-let boundsX = 800;
-let boundsY = 600;
-let posX = dvdSize.x/2;
-let posY = dvdSize.y/2;
-let speedX = 5;
-let speedY = 5;
+
+let dvd = {
+    image: null,
+    sizeX: 187,
+    sizeY: 83,
+    posX: 0,
+    posY: 0,
+    speedX: 5,
+    speedY: 5
+
+};
+
+dvd.posX = dvd.sizeX/2;
+dvd.posY = dvd.sizeY/2;
+
+function preload() {
+    dvd.image = loadImage('img/dvdlogo.png');
+  }
 
 function setup() {
-    createCanvas(boundsX, boundsY);
+    createCanvas(bounds.x, bounds.y);
 }
 
 function draw() {
@@ -26,16 +37,16 @@ function draw() {
     noStroke();
     fill(0,200,40);
     //Create a circle of arbitrary size with position of (posX,posY)
-    image(dvd,posX,posY);
+    image(dvd.image,dvd.posX,dvd.posY);
     //Check if posX is below 0 or above boundsX, if so multiply speedX by -1
-    if(posX<0||posX>boundsX-(dvdSize.x)) {
-        speedX *= -1;
+    if(dvd.posX<0||dvd.posX>bounds.x-(dvd.sizeX)) {
+        dvd.speedX *= -1;
     }
     //Check if posX is below 0 or above boundsX, if so multiply speedX by -1
-    if(posY<0||posY>boundsY-(dvdSize.y)) {
-        speedY *= -1;
+    if(dvd.posY<0||dvd.posY>bounds.y-(dvd.sizeY)) {
+        dvd.speedY *= -1;
     }
     //Add speedX and speedY to posX and posY, respectively
-    posX += speedX;
-    posY += speedY;
+    dvd.posX += dvd.speedX;
+    dvd.posY += dvd.speedY;
 }
