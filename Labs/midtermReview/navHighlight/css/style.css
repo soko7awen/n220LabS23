@@ -1,0 +1,14 @@
+#topText {
+    position: absolute;
+    left: 45vw;
+    width: 200px;
+    height: 100px;
+    border: solid black 2px;
+}
+
+.div {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    background-color: gray;
+}
