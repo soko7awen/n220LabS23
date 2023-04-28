@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+	<div class="playerWrapper">
+		<p>Player 1: </p>
+		<p>Color: </p>
+		<div class="rangeslider redSlider">
+			<input type="range" min="0" max="255" value="0" class="slider" id="RedSlider1" onchange="sliderChange(1);">
+		</div>
+		<div class="rangeslider greenSlider">
+			<input type="range" min="0" max="255" value="0" class="slider" id="GreenSlider1" onchange="sliderChange(1);">
+		</div>
+		<div class="rangeslider blueSlider">
+			<input type="range" min="0" max="255" value="0" class="slider" id="BlueSlider1" onchange="sliderChange(1);">
+		</div>
+	</div>
+	<div class="gameWrapper">
+		<div id="Container">
+			<div class="row">
+				<div class="square" onclick="onClick(this)"></div>
+				<div class="square" onclick="onClick(this)"></div>
+				<div class="square" onclick="onClick(this)"></div>
+			</div>
+			<div class="row">
+				<div class="square" onclick="onClick(this)"></div>
+				<div class="square" onclick="onClick(this)"></div>
+				<div class="square" onclick="onClick(this)"></div>
+			</div>
+			<div class="row">
+				<div class="square" onclick="onClick(this)"></div>
+				<div class="square" onclick="onClick(this)"></div>
+				<div class="square" onclick="onClick(this)"></div>
+			</div>
+		</div>
+		<div class="playerText">Current Player: X</div>
+		<div class="winText"></div>
+		<input type="button" value="Try Again?" class="tryAgain" onclick="reset()">
+	</div>
+		<div class="playerWrapper">
+		<p>Player 2: </p>
+		<p>Color: </p>
+		<div class="rangeslider redSlider">
+			<input type="range" min="0" max="255" value="0" class="slider" id="RedSlider2" onchange="sliderChange(2);">
+		</div>
+		<div class="rangeslider greenSlider">
+			<input type="range" min="0" max="255" value="0" class="slider" id="GreenSlider2" onchange="sliderChange(2);">
+		</div>
+		<div class="rangeslider blueSlider">
+			<input type="range" min="0" max="255" value="0" class="slider" id="BlueSlider2" onchange="sliderChange(2);">
+		</div>
+	</div>
+    <script src="app.js"></script>
+</body>
+</html>
