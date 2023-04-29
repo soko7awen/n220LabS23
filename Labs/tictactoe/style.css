@@ -43,6 +43,15 @@ body {
 	height: 100%;
 }
 
+.playerNameWrapper {
+    display: flex;
+}
+
+.playerLetter {
+    width: 10px;
+    margin-left: 5px;
+}
+
 .redSlider {
     background-color: red;
 }

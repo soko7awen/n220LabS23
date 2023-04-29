@@ -3,6 +3,8 @@ let container = document.getElementById("Container");
 let playerText = document.getElementsByClassName("playerText")[0];
 let winText = document.getElementsByClassName("winText")[0];
 let tryAgain = document.getElementsByClassName("tryAgain")[0];
+let playerLetter1 = document.getElementById("PlayerLetter1");
+let playerLetter2 = document.getElementById("PlayerLetter2");
 let redSlider1 = document.getElementById("RedSlider1");
 let greenSlider1 = document.getElementById("GreenSlider1");
 let blueSlider1 = document.getElementById("BlueSlider1");
@@ -22,6 +24,7 @@ let players = ["","X","O"]
 let player = 1;
 //Win state
 let won = false;
+
 
 //On click function
 function onClick(me) {
@@ -86,6 +89,9 @@ function winCheck() {
     }
     //If there are no blank spots and the game was not won, then draw
 	if (!won && !zeros) {
+        //Hides the "Current player" text
+        playerText.style.visibility = "hidden";
+        //Shows the "Draw!" text
         winText.innerHTML = "Draw!";
         //Shows the "Try Again? button"
         tryAgain.style.visibility = 'visible';
@@ -109,6 +115,27 @@ function sliderChange(p) {
     }
 }
 
+function letterChange(p) {
+    if (p==1) players[p] = playerLetter1.value;
+    else players[p] = playerLetter2.value;
+    playerText.innerHTML = "Current Player: " + players[player];
+    for (let i=0; i<=2; i++) {
+        for (let j=0; j<=2; j++) {
+            //Variable for current square
+            let currentSquare = container.children[i].children[j];
+            //if current square is the given player's number, then update its letter
+            if (grid[i][j] == p) {
+                if (p==1) {
+                    currentSquare.innerHTML = playerLetter1.value;
+                }
+                else if (p==2) {
+                    currentSquare.innerHTML = playerLetter2.value;
+                }
+            }
+        }
+    }
+}
+
 //Reset back to default
 function reset() {
     //Loop through the grid
@@ -121,6 +148,7 @@ function reset() {
             //Set current player back to 1
             player = 1;
             //Reset current player text
+            playerText.style.visibility = 'visible';
             playerText.innerHTML = "Current Player: " + players[player];
             //Hide win text
             winText.innerHTML = "";
@@ -131,3 +159,6 @@ function reset() {
         }
     }
 }
+
+letterChange(1);
+letterChange(2);

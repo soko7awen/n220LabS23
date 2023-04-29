@@ -9,7 +9,10 @@
 </head>
 <body>
 	<div class="playerWrapper">
-		<p>Player 1: </p>
+		<div class="playerNameWrapper">
+			<div>Player 1: </div>
+			<input type="text" name="" maxlength="1" placeholder="X" value="X" class="playerLetter" id="PlayerLetter1" onfocusout="letterChange(1)" onkeyup="this.value = this.value.toUpperCase();">
+		</div>
 		<p>Color: </p>
 		<div class="rangeslider redSlider">
 			<input type="range" min="0" max="255" value="0" class="slider" id="RedSlider1" onchange="sliderChange(1);">
@@ -39,12 +42,15 @@
 				<div class="square" onclick="onClick(this)"></div>
 			</div>
 		</div>
-		<div class="playerText">Current Player: X</div>
+		<div class="playerText">Current Player: </div>
 		<div class="winText"></div>
 		<input type="button" value="Try Again?" class="tryAgain" onclick="reset()">
 	</div>
 		<div class="playerWrapper">
-		<p>Player 2: </p>
+		<div class="playerNameWrapper">
+			<div>Player 2: </div>
+			<input type="text" name="" maxlength="1" placeholder="O" value="O" class="playerLetter" id="PlayerLetter2" onfocusout="letterChange(2)" onkeyup="this.value = this.value.toUpperCase();">
+		</div>
 		<p>Color: </p>
 		<div class="rangeslider redSlider">
 			<input type="range" min="0" max="255" value="0" class="slider" id="RedSlider2" onchange="sliderChange(2);">
