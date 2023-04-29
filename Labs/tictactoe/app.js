@@ -85,7 +85,7 @@ function winCheck() {
         }
     }
     //If there are no blank spots and the game was not won, then draw
-	if (!zeros) {
+	if (!won && !zeros) {
         winText.innerHTML = "Draw!";
         //Shows the "Try Again? button"
         tryAgain.style.visibility = 'visible';
