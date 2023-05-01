@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Mixer</title>
+</head>
+<body>
+    <div id="ColorRect" data-red="0" data-green="0" data-blue="0"></div>
+    <div id="CurrentColor"></div>
+    <div class="row">
+        <div class="colorText">Red: </div>
+        <button data-red="1" onclick="onClick(event)">+1</button>
+        <button data-red="5" onclick="onClick(event)">+5</button>
+        <button data-red="10" onclick="onClick(event)">+10</button>
+    </div>
+    <div class="row">
+        <div class="colorText">Green: </div>
+        <button data-green="1" onclick="onClick(event)">+1</button>
+        <button data-green="5" onclick="onClick(event)">+5</button>
+        <button data-green="10" onclick="onClick(event)">+10</button>
+    </div>
+    <div class="row">
+        <div class="colorText">Blue: </div>
+        <button data-blue="1" onclick="onClick(event)">+1</button>
+        <button data-blue="5" onclick="onClick(event)">+5</button>
+        <button data-blue="10" onclick="onClick(event)">+10</button>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

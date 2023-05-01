@@ -14,7 +14,7 @@ let blueSlider2 = document.getElementById("BlueSlider2");
 
 //Matrix representing grid
 let grid = [
-    [ 0,0,0],
+    [ 0,0,0 ],
     [ 0,0,0 ],
     [ 0,0,0 ]
 ];

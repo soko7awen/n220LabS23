@@ -1,0 +1,10 @@
+#ColorRect {
+    width: 850px;
+    height: 200px;
+    background-color: black;
+}
+
+.colorText {
+    display: inline-block;
+    min-width:55px;
+}
